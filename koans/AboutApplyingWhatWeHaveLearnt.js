@@ -149,6 +149,21 @@ console.log(ingredientCount)
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
+    let smallestDivByAll = function(num) {
+      let counter = 2;
+      let numbers = _.range(1, num + 1)
+      while (!numbers.every(function(number) {
+       return counter % number === 0;
+      })) {
+        counter += 2;
+      }
+      console.log(counter)
+      return counter;
+    
+    }
+    expect(smallestDivByAll(5)).toBe(60)
+    expect(smallestDivByAll(20)).toBe(232792560)
+
 
   });
 

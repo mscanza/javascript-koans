@@ -116,8 +116,30 @@ console.log(ingredientCount)
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
+  
   it("should find the largest prime factor of a composite number", function () {
+
+//get a range of numbers from 2 to half the floor of half the number;
+//get all the numbers that the number is divisble by
+//check if the number is prime
+//return the largest prime
+    let isPrime = function(num) {
+      let divsors =  _.range(2, Math.round(num / 2) + 1)
+            .filter(item => num % item === 0)
+            return !divsors.length;
+
+    }
+    let largestPrimeFactor = function(num) {
+      let collection = _.range(2, Math.floor(num / 2) + 1)
+                      .filter(item => num % item === 0 && isPrime(item))
+
+                      return collection[collection.length - 1] || null;
+    }
+    expect(largestPrimeFactor(20)).toBe(5)
+    expect(largestPrimeFactor(15)).toBe(5)
+    expect(largestPrimeFactor(7)).toBe(null)
+    expect(largestPrimeFactor(6)).toBe(3)
+
 
   });
 
@@ -137,5 +159,5 @@ console.log(ingredientCount)
   it("should find the 10001st prime", function () {
 
   });
-  */
+  
 });
